@@ -1,0 +1,14 @@
+# Treat text files normally
+* text=auto
+
+# Unreal Engine assets are binary
+*.uasset binary
+*.umap binary
+
+# Prevent line ending conversion for binary files
+*.uasset -text
+*.umap -text
+
+# Export rules
+/Intermediate export-ignore
+/Saved export-ignore
