@@ -7,7 +7,7 @@
 #include "TestActor.generated.h"
 
 UCLASS()
-class BEYONDTHE_OCTAGON_API ATestActor : public AActor
+class BEYONDTHE_OCTAGON_API ATestActor : public AActor // A in Actor shows that this is an actor
 {
 	GENERATED_BODY()
 	
