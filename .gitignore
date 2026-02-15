@@ -1,7 +1,11 @@
+# Unreal Engine
 Binaries
+Build
 DerivedDataCache
 Intermediate
 Saved
+
+# IDEs
 .vscode
 .vs
 *.VC.db
@@ -12,3 +16,6 @@ Saved
 *.suo
 *.xcodeproj
 *.xcworkspace
+
+# macOS system files
+.DS_Store
