@@ -7,6 +7,7 @@
 #include "EnhancedInputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "InputAction.h"
+#include "GameFramework/CharacterMovementComponent.h"
 
 
 // Sets default values
@@ -15,12 +16,15 @@ AMMAFighterCharacter::AMMAFighterCharacter()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
-	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom")); // The component is created with proper memory management 
-	// New User Spring Arm Component named CameraBoom and store pointer
-	// in CameraBoom of Character
 
-	CameraBoom->SetupAttachment(RootComponent); //Attach under root component in blueprint
-	CameraBoom->TargetArmLength = 400.0f;
+	Camera = CreateDefaultSubobject<UCameraComponent>(("Camera"));
+	Camera->SetupAttachment(RootComponent);
+	Camera->bUsePawnControlRotation = true;
+
+	bUseControllerRotationYaw = false;
+	GetCharacterMovement()->bOrientRotationToMovement = false;
+	
+
 
 
 }
@@ -40,6 +44,30 @@ void AMMAFighterCharacter::BeginPlay()
 
 	}
 	
+}
+
+
+
+
+// Called every frame
+void AMMAFighterCharacter::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+}
+
+// Called to bind functionality to input
+void AMMAFighterCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+{
+	Super::SetupPlayerInputComponent(PlayerInputComponent);
+
+	if(UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(PlayerInputComponent))
+	{
+		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AMMAFighterCharacter::Move);
+		EnhancedInputComponent->BindAction(LookAction, ETriggerEvent::Triggered, this, &AMMAFighterCharacter::Look);
+		EnhancedInputComponent->BindAction(JumpAction, ETriggerEvent::Triggered, this, &AMMAFighterCharacter::Jump);
+	}
+
 }
 
 
@@ -75,22 +103,22 @@ void AMMAFighterCharacter::Move(const FInputActionValue& Value)
 
 }
 
-// Called every frame
-void AMMAFighterCharacter::Tick(float DeltaTime)
+void AMMAFighterCharacter::Look(const FInputActionValue& Value)
 {
-	Super::Tick(DeltaTime);
+	if(Controller != nullptr)
+	{
+
+	FVector2D InputVector = Value.Get<FVector2D>();
+	AddControllerYawInput(InputVector.X);
+	AddControllerYawInput(InputVector.Y);
+
+	}
 
 }
 
-// Called to bind functionality to input
-void AMMAFighterCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
+void AMMAFighterCharacter::Jump()
 {
-	Super::SetupPlayerInputComponent(PlayerInputComponent);
-
-	if(UEnhancedInputComponent* EnhancedInputComponent = CastChecked<UEnhancedInputComponent>(PlayerInputComponent))
-	{
-		EnhancedInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &AMMAFighterCharacter::Move); //
-	}
+	ACharacter::Jump();
 
 }
 
