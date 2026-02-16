@@ -16,10 +16,16 @@ AMMAFighterCharacter::AMMAFighterCharacter()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	
+	SpringArm = CreateDefaultSubobject<USpringArmComponent>(("Spring Arm"));
+	SpringArm->SetupAttachment(RootComponent);
+	SpringArm->bUsePawnControlRotation = true;
+
+
 
 	Camera = CreateDefaultSubobject<UCameraComponent>(("Camera"));
-	Camera->SetupAttachment(RootComponent);
-	Camera->bUsePawnControlRotation = true;
+	Camera->SetupAttachment(SpringArm);
+	
 
 	bUseControllerRotationYaw = false;
 	GetCharacterMovement()->bOrientRotationToMovement = false;
@@ -109,8 +115,8 @@ void AMMAFighterCharacter::Look(const FInputActionValue& Value)
 	{
 
 	FVector2D InputVector = Value.Get<FVector2D>();
-	AddControllerYawInput(InputVector.X);
-	AddControllerYawInput(InputVector.Y);
+	AddControllerYawInput(InputVector.X); //Look Left and Right
+	AddControllerPitchInput(InputVector.Y); //Look Up and Down
 
 	}
 

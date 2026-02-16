@@ -16,6 +16,9 @@ class BEYONDTHE_OCTAGON_API AMMAFighterCharacter : public ACharacter
 	UPROPERTY(VisibleAnywhere, meta =(AllowPrivateAccess = "true"))
 	class UCameraComponent* Camera;
 
+	UPROPERTY(VisibleAnywhere, meta =(AllowPrivateAccess = "true"))
+	class USpringArmComponent* SpringArm;
+
 
 
 
@@ -40,7 +43,7 @@ protected:
 	UPROPERTY(EditAnywhere,Category = "Input")
 	class UInputAction* JumpAction;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Input")
+	UPROPERTY(EditAnywhere,Category = "Input")
 	class UInputAction* LookAction;
 
 
