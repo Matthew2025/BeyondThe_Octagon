@@ -1,0 +1,3 @@
+The Minimum Viable Product is a 3D third person multi-level action-adventure video game where the player controls
+an MMA fighter navigating a world filled with humanoid monsters including basic cutscenes to advance the story between levels, a health and damage system, and progress/die conditions for each level. 
+
