@@ -44,9 +44,10 @@ void ADamageableCharacterBase::RespondToDamageAvoided_Implementation(const FDama
 
 void ADamageableCharacterBase::RespondToDeath_Implementation()
 {
-	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-	GetMesh()->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
-	GetMesh()->SetSimulatePhysics(true);
+	//RagDoll Animation
+	// GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	// GetMesh()->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+	// GetMesh()->SetSimulatePhysics(true);
 }
 
 // Called every frame
