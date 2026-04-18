@@ -10,7 +10,7 @@
 AEnemyController::AEnemyController(FObjectInitializer const &ObjectInit)
 {
     //Reference to Behavior Tree Class
-    static ConstructorHelpers::FObjectFinder<UBehaviorTree> treeFinder(TEXT("/Script/AIModule.BehaviorTree'/Game/Games/Characters/MainCharacter/Prototype/AI/BT_EnemyBT.BT_EnemyBT'"));
+    static ConstructorHelpers::FObjectFinder<UBehaviorTree> treeFinder(TEXT("/Script/AIModule.BehaviorTree'/Game/Games/Characters/MainCharacter/Prototype/AI/Behavior/BT_EnemyBT.BT_EnemyBT'"));
     
     //Getting the Behavior Tree directly from reference
     if(treeFinder.Succeeded())
@@ -41,6 +41,7 @@ void AEnemyController::OnPossess(APawn *Pawn)
     if(Blackboard)
     {
         Blackboard->InitializeBlackboard(*BehaviorTree->BlackboardAsset);
+        Blackboard->SetValueAsObject(TEXT("SelfActor"), Pawn);
     }
 }
 

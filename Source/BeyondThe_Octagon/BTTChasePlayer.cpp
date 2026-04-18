@@ -28,7 +28,7 @@ EBTNodeResult::Type UBTTChasePlayer::ExecuteTask(UBehaviorTreeComponent &TreeCom
 
 
         //Move AI towards player
-        AIController->MoveToLocation(Location);
+        AIController->MoveToLocation(Location, 300.0f);
 
     }
 
