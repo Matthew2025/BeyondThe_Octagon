@@ -48,6 +48,24 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Counter")
 	void PlayCounterMontage();
 
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Combo")
+	void ComboCounter();
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Combo")
+	void ResetComboCounter();
+
+
+public:
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Combo")
+	int Combo;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Tumer Handle")
+	FTimerHandle ComboCounterTimerHandle;
+
+
+
+
+
 
 
 
