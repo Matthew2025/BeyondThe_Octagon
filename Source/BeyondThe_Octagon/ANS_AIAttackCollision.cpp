@@ -77,20 +77,27 @@ void UANS_AIAttackCollision::DoCollisionCheck(USkeletalMeshComponent *MeshCompon
         if(HitActor && HitResult.GetActor()->GetComponentByClass(UFreeflowCombatBase::StaticClass()))
         {
 
+            
+
             //Print HitActor Name - Debugging
             FString HitActorName = HitActor->GetName();
             GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, FString::Printf(TEXT("Hit Actor %s"), *HitActorName));
 
             UFreeflowCombatBase* FFCS = Cast<UFreeflowCombatBase>(HitActor->GetComponentByClass(UFreeflowCombatBase::StaticClass()));
 
-            EAttackHitDirection HitDirection = FFCS->HitDirection(MeshComponent->GetOwner());
-            if(HitDirection != EAttackHitDirection::None)
+            if(!(FFCS->GetTag() == HitCollisionExclusionTag))
             {
-                FFCS->PlayHitMontage(HitDirection);
-            }
-            else
-            {
-                FFCS->PlayHitMontage(EAttackHitDirection::forward);
+
+            
+                EAttackHitDirection HitDirection = FFCS->HitDirection(MeshComponent->GetOwner());
+                if(HitDirection != EAttackHitDirection::None)
+                {
+                    FFCS->PlayHitMontage(HitDirection);
+                }
+                else
+                {
+                    FFCS->PlayHitMontage(EAttackHitDirection::forward);
+                }
             }
         }
     }

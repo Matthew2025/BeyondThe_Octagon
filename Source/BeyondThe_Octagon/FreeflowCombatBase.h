@@ -30,6 +30,12 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 	void SetCurrentEnemy(AActor* EnemyReference);
 
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void SetCounterEnemy(AActor* EnemyReference);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintPure, BlueprintCallable)
+	AActor* GetCounterEnemy();
+
 	UFUNCTION(BlueprintImplementableEvent, BlueprintPure, BlueprintCallable)
 	AActor* GetCurrentEnemy();
 

@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Animation/AnimNotifies/AnimNotifyState.h"
+#include "GameplayTagContainer.h"
 #include "ANS_AIAttackCollision.generated.h"
 
 /**
@@ -26,17 +27,21 @@ public:
 
 public:
 
-	UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "Settings");
+	UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "Settings")
 	bool doAttackOnce;
 
-	UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "Settings");
+	UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "Settings")
 	float radius;
 
-	UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "Settings");
+	UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "Settings")
 	FName startSocket;
 
-	UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "Settings");
+	UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "Settings")
 	FName endSocket;
+
+	UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "Settings")
+	FGameplayTag HitCollisionExclusionTag;
+
 
 
 private:
