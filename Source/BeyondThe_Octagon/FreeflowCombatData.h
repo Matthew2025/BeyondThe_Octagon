@@ -9,6 +9,7 @@
 UENUM(BlueprintType)
 enum class EAttackHitDirection : uint8
 {
+	None UMETA(DisplayName = "None"),
 	forward UMETA(DisplayName = "Forward"),
 	backward UMETA(DisplayName = "Backward"),
 	left UMETA(DisplayName = "Left"),
@@ -23,7 +24,8 @@ enum class EAIStates: uint8
 	GetBack,
 	Wait,
 	LookForWeapons,
-	Strafe
+	Strafe,
+	Attack
 
 };
 

@@ -11,7 +11,9 @@
 #include "Components/CapsuleComponent.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "GameFramework/Character.h"
+#include "FreeflowCombatData.h"
 #include "MMAFighterCharacter.generated.h" // Has to be last include
+
 
 class UDamageSystemComponent;
 
@@ -38,6 +40,7 @@ class BEYONDTHE_OCTAGON_API AMMAFighterCharacter : public ACharacter, public IDa
 public:
 	// Sets default values for this character's properties
 	AMMAFighterCharacter(); // Define all things the character is or has
+
 
 protected:
 	// Called when the game starts or when spawned
@@ -92,6 +95,8 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 	TObjectPtr<UDamageSystemComponent> DamageSystemComponent;
+
+	
 	
 
 protected:
