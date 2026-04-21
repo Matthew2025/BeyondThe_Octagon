@@ -85,7 +85,7 @@ void UANS_AIAttackCollision::DoCollisionCheck(USkeletalMeshComponent *MeshCompon
 
             UFreeflowCombatBase* FFCS = Cast<UFreeflowCombatBase>(HitActor->GetComponentByClass(UFreeflowCombatBase::StaticClass()));
 
-            if(!(FFCS->GetTag() == HitCollisionExclusionTag))
+            if(!(FFCS->GetTag() == HitCollisionExclusionTag) || !(FFCS->GetTag() == FinisherTag))
             {
 
             

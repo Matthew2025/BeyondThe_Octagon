@@ -26,6 +26,18 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, BlueprintPure, BlueprintCallable)
 	bool GetAttackPlayer();
 
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void SetPlayerDead(const bool ActorDead);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintPure, BlueprintCallable)
+	bool GetPlayerDead();
+
+
+
+private:
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Health, meta = (AllowPrivateAccess = true))
+	bool Dead;
+
 
 
 

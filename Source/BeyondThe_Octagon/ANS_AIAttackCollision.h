@@ -42,6 +42,9 @@ public:
 	UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "Settings")
 	FGameplayTag HitCollisionExclusionTag;
 
+	UPROPERTY(EditInstanceOnly, BlueprintReadOnly, Category = "Settings")
+	FGameplayTag FinisherTag;
+
 
 
 private:

@@ -48,11 +48,23 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Counter")
 	void PlayCounterMontage();
 
-	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Combo")
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Counter")
 	void ComboCounter();
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Attack")
+	FPlayerAttackAnimationData GetAttackAnimations();
+
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Attack")
+	void SetAttackAnimations(const FPlayerAttackAnimationData& NewAttackAnimation);
+
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Combo")
 	void ResetComboCounter();
+
+private:
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Attack, meta = (AllowPrivateAccess = true))
+	FPlayerAttackAnimationData AttackAnimations;
 
 
 public:

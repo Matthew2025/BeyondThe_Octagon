@@ -25,6 +25,21 @@ public:
 	// Sets default values for this character's properties
 	ADamageableCharacterBase();
 
+public:
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	EAttackHitDirection hitDirection(AActor* damageInstigator);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	void setAttackPlayer(bool AttackPlayer);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+	bool getAttackPlayer();
+
+
+
+
+	
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
