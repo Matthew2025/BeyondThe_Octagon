@@ -46,8 +46,8 @@ void UFreeflowCombat_ResetPlayRate::NotifyTick(USkeletalMeshComponent *MeshCompo
 
             if(GEngine)
             {
-                GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Purple, FString::SanitizeFloat(Distance), true);
-                GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Yellow, FString::SanitizeFloat(playRate), true);
+                // GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Purple, FString::SanitizeFloat(Distance), true);
+                // GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Yellow, FString::SanitizeFloat(playRate), true);
                     
 
             }

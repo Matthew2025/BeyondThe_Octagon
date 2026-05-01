@@ -16,7 +16,7 @@ void UFreeflowCombat_ANS_SlowDownRate::NotifyBegin(USkeletalMeshComponent *MeshC
     minPlayRate = FMath::Max(minPlayRate, lowestPlayRate);
     if(GEngine)
     {
-        GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Emerald, FString::SanitizeFloat(minPlayRate), true);
+        // GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Emerald, FString::SanitizeFloat(minPlayRate), true);
 
     }
 
@@ -53,8 +53,8 @@ void UFreeflowCombat_ANS_SlowDownRate::NotifyTick(USkeletalMeshComponent *MeshCo
         
             if(GEngine)
             {
-                GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Emerald, FString::SanitizeFloat(Distance), true);
-                GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Red, FString::SanitizeFloat(playRate), true);
+                // GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Emerald, FString::SanitizeFloat(Distance), true);
+                // GEngine->AddOnScreenDebugMessage(-1, 2.0f, FColor::Red, FString::SanitizeFloat(playRate), true);
                     
 
             }

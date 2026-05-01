@@ -50,6 +50,32 @@ struct FPlayerAttackAnimationData
 	}
 };
 
+USTRUCT(BlueprintType)
+struct FFinisherAnimationData
+{
+
+	GENERATED_BODY()
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UAnimMontage* FinisherMontage;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	UAnimMontage* HitMontage;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float playRate;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
+	float offSet;
+
+	FFinisherAnimationData()
+	{
+		playRate = 1.0f;
+		offSet = 100.0f;
+	}
+
+};
+
 /**
  * 
  */

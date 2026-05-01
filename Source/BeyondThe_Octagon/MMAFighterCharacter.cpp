@@ -9,6 +9,7 @@
 #include "InputAction.h"
 #include "DamageSystem/DamageableCharacterBase.h"
 #include "DamageSystem/DamageSystemComponent.h"
+#include "MotionWarpingComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 
 
@@ -40,6 +41,8 @@ AMMAFighterCharacter::AMMAFighterCharacter()
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 
 	DamageSystemComponent = CreateDefaultSubobject<UDamageSystemComponent>(TEXT("Damage System Component"));
+	
+	MotionWarping = CreateDefaultSubobject<UMotionWarpingComponent>(TEXT("Motion Warping"));
 
 
 

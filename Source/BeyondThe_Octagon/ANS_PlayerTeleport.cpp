@@ -3,6 +3,7 @@
 
 #include "ANS_PlayerTeleport.h"
 #include "FreeflowCombatBase.h"
+#include "MMAFighterCharacter.h"
 #include "Kismet/KismetMathLibrary.h"
 
 
@@ -47,11 +48,11 @@ void UANS_PlayerTeleport::NotifyEnd(USkeletalMeshComponent *MeshComponent, UAnim
     if(MeshComponent->GetOwner())
     {
         //Get FreeflowCombatComponent
-        UFreeflowCombatBase* FFCC = Cast<UFreeflowCombatBase>(MeshComponent->GetOwner()->GetComponentByClass(UFreeflowCombatBase::StaticClass()));
-        if(FFCC)
+        AMMAFighterCharacter* Fighter = Cast<AMMAFighterCharacter>(MeshComponent->GetOwner());
+        if(Fighter)
         {
             //Play Counter Montage on attacking enemy
-            FFCC->PlayCounterMontage();
+            Fighter->DashCounterMontage();
         }
     }
 }

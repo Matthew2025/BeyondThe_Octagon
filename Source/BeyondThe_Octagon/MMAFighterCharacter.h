@@ -12,6 +12,7 @@
 #include "Components/SkeletalMeshComponent.h"
 #include "GameFramework/Character.h"
 #include "FreeflowCombatData.h"
+#include "MotionWarpingComponent.h"
 #include "MMAFighterCharacter.generated.h" // Has to be last include
 
 
@@ -31,6 +32,11 @@ class BEYONDTHE_OCTAGON_API AMMAFighterCharacter : public ACharacter, public IDa
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta =(AllowPrivateAccess = "true"))
 	class USpringArmComponent* SpringArm;
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta =(AllowPrivateAccess = "true"))
+	class UMotionWarpingComponent* MotionWarping;
+
+	
+
 
 
 
@@ -40,6 +46,13 @@ class BEYONDTHE_OCTAGON_API AMMAFighterCharacter : public ACharacter, public IDa
 public:
 	// Sets default values for this character's properties
 	AMMAFighterCharacter(); // Define all things the character is or has
+
+public:
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Counter")
+	void DashCounterMontage();
+
+
 
 
 protected:

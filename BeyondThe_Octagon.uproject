@@ -25,7 +25,7 @@
 		},
 		{
 			"Name": "MetaHuman",
-			"Enabled": false,
+			"Enabled": true,
 			"SupportedTargetPlatforms": [
 				"Win64",
 				"Linux"
@@ -33,14 +33,14 @@
 		},
 		{
 			"Name": "MetaHumanCalibrationDiagnostics",
-			"Enabled": false,
+			"Enabled": true,
 			"SupportedTargetPlatforms": [
 				"Win64"
 			]
 		},
 		{
 			"Name": "MetaHumanCalibrationProcessing",
-			"Enabled": false,
+			"Enabled": true,
 			"SupportedTargetPlatforms": [
 				"Win64",
 				"Linux"
@@ -48,7 +48,7 @@
 		},
 		{
 			"Name": "MetaHumanCoreTech",
-			"Enabled": false,
+			"Enabled": true,
 			"SupportedTargetPlatforms": [
 				"Win64",
 				"Linux"
@@ -56,19 +56,19 @@
 		},
 		{
 			"Name": "MetaHumanCharacter",
-			"Enabled": false
+			"Enabled": true
 		},
 		{
 			"Name": "MetaHumanCharacterUAF",
-			"Enabled": false
+			"Enabled": true
 		},
 		{
 			"Name": "MetaHumanLiveLink",
-			"Enabled": false
+			"Enabled": true
 		},
 		{
 			"Name": "MetaHumanRuntime",
-			"Enabled": false
+			"Enabled": true
 		},
 		{
 			"Name": "MotionWarping",

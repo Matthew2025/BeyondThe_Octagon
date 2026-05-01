@@ -45,26 +45,55 @@ public:
 	UFUNCTION(BlueprintImplementableEvent, BlueprintPure, BlueprintCallable)
 	FGameplayTag GetTag();
 
-	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Counter")
-	void PlayCounterMontage();
+	// UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Counter")
+	// void PlayCounterMontage();
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Counter")
 	void ComboCounter();
 
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Finisher")
+	void SetFinisherAnimations(const FFinisherAnimationData& NewFinisherData);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintPure, BlueprintCallable)
+	FFinisherAnimationData GetFinisherAnimations();
+
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Attack")
+	void SetAttackAnimations(const FPlayerAttackAnimationData& NewAttackData);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintPure, BlueprintCallable)
 	FPlayerAttackAnimationData GetAttackAnimations();
-
-
-	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Attack")
-	void SetAttackAnimations(const FPlayerAttackAnimationData& NewAttackAnimation);
 
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Combo")
 	void ResetComboCounter();
 
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable, Category = "Counter")
+	void SetCounterAnimations(const FFinisherAnimationData& NewCounterData);
+
+	UFUNCTION(BlueprintImplementableEvent, BlueprintPure, Category = "Counter")
+	FFinisherAnimationData GetCounterAnimations();
+
+
+
+
 private:
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Finishers, meta = (AllowPrivateAccess = true))
+	FFinisherAnimationData FinisherAnimation;
+
 	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Attack, meta = (AllowPrivateAccess = true))
-	FPlayerAttackAnimationData AttackAnimations;
+	FPlayerAttackAnimationData AttackAnimation;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadWrite, Category = Counter, meta = (AllowPrivateAccess = true))
+	FFinisherAnimationData CounterAnimation;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Finishers, meta = (AllowPrivateAccess = true))
+	TArray<FFinisherAnimationData> FinisherAnimationArray;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = Counters, meta = (AllowPrivateAccess = true))
+	TArray<FFinisherAnimationData> CounterAnimationArray;
+
+
+
 
 
 public:

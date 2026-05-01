@@ -61,7 +61,7 @@ void UANS_AIAttackCollision::DoCollisionCheck(USkeletalMeshComponent *MeshCompon
     //Set Debug Type based on Debug bool exposed to AnimNotifyState
     if(debug)
     {
-        DoTrace = EDrawDebugTrace::ForDuration;
+        DoTrace = EDrawDebugTrace::None;
     }
     else
     {
@@ -81,7 +81,7 @@ void UANS_AIAttackCollision::DoCollisionCheck(USkeletalMeshComponent *MeshCompon
 
             //Print HitActor Name - Debugging
             FString HitActorName = HitActor->GetName();
-            GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, FString::Printf(TEXT("Hit Actor %s"), *HitActorName));
+            // GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Yellow, FString::Printf(TEXT("Hit Actor %s"), *HitActorName));
 
             UFreeflowCombatBase* FFCS = Cast<UFreeflowCombatBase>(HitActor->GetComponentByClass(UFreeflowCombatBase::StaticClass()));
 

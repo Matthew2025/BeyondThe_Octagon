@@ -11,6 +11,8 @@ UEnemyComponentBase::UEnemyComponentBase()
 	PrimaryComponentTick.bCanEverTick = true;
 
 	// ...
+
+	
 }
 
 
